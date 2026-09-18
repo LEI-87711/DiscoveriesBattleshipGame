@@ -32,6 +32,9 @@ rajada de três tiros, informando se acertou em um ou mais navios e de que tipo,
 os tiros na água! Cada jogador vai registando na grelha do oponente os resultados dos seus
 tiros, identificando os navios afundados. Ganha o jogo o primeiro que atingir todos os navios
 da frota adversária.
+<img width="1200" height="1200" alt="image" src="https://github.com/user-attachments/assets/551f1635-fe35-42b8-841a-a4bc797bae5f" />
+
+<img width="1200" height="1200" alt="image" src="https://github.com/user-attachments/assets/f406c980-db56-466f-aa6a-3f0fd3a99894" />
 
 
 ## Bibliografia
