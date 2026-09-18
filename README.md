@@ -10,7 +10,7 @@ Licenciatura em Engenharia Informática (LEI)
 | Número | Nome            |
 |--------|-----------------|
 | 87711  | José Gil        |
-| 124359 | Roman           |
+| 124359 | Roman Havrylenko|
 | 122669 | Luo Hang        |
 | 124109 | Salvador Gomes  |
 
@@ -32,3 +32,7 @@ rajada de três tiros, informando se acertou em um ou mais navios e de que tipo,
 os tiros na água! Cada jogador vai registando na grelha do oponente os resultados dos seus
 tiros, identificando os navios afundados. Ganha o jogo o primeiro que atingir todos os navios
 da frota adversária.
+
+
+## Bibliografia
+[Wiki](https://en.wikipedia.org/wiki/Battleship_(game))
