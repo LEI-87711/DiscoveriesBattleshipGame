@@ -23,8 +23,4 @@ public interface IGame {
     void printValidShots();
 
     void printFleet();
-
-    void printMyBoard(IFleet fleet);
-
-    void printOpponentBoard();
 }

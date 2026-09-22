@@ -138,10 +138,8 @@ public class Tasks {
                     }
                     break;
                 case VERTIROS:
-                    if (game != null) {
-                        game.printMyBoard(fleet);
-                        game.printOpponentBoard();
-                    }
+                    if (game != null)
+                        game.printValidShots();
                     break;
                 default:
                     LOGGER.info("Que comando é esse??? Repete ...");
@@ -161,20 +159,16 @@ public class Tasks {
         assert in != null;
 
         Fleet fleet = new Fleet();
-        int i = 0;
+        int i = 0; // i represents the total of successfully created ships
 
-        while (i < Fleet.FLEET_SIZE) {
+        while (i <= Fleet.FLEET_SIZE) {
             IShip s = readShip(in);
             if (s != null) {
                 boolean success = fleet.addShip(s);
-                if (success) {
+                if (success)
                     i++;
-                    System.out.println("\n--- Navio " + i + "/" + Fleet.FLEET_SIZE
-                            + " adicionado: " + s.getCategory() + " " + s.getBearing() + " " + s.getPosition() + " ---");
-                    BoardPrinter.printPlayerBoard(fleet);
-                } else {
+                else
                     LOGGER.info("Falha na criacao de {} {} {}", s.getCategory(), s.getBearing(), s.getPosition());
-                }
             } else {
                 LOGGER.info("Navio desconhecido!");
             }
