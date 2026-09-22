@@ -1,6 +1,6 @@
 # Battleship
 
-# Nome do Grupo: SGLR
+## Nome do Grupo: SGLR
 
 ## Curso
 Licenciatura em Engenharia Informática (LEI)
