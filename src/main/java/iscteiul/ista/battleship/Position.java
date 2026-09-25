@@ -1,18 +1,37 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 import java.util.Objects;
 
+/**
+ * Representa uma posição (célula) do tabuleiro da Batalha Naval.
+ * <p>
+ * Uma posição é identificada pela linha e pela coluna, e guarda ainda se
+ * está ocupada por um navio e se já foi atingida por um tiro. Duas posições
+ * são consideradas iguais se tiverem a mesma linha e a mesma coluna,
+ * independentemente do seu estado.
+ *
+ * @see IPosition
+ */
 public class Position implements IPosition {
+
+    /** Linha da posição no tabuleiro. */
     private int row;
+
+    /** Coluna da posição no tabuleiro. */
     private int column;
+
+    /** Indica se a posição está ocupada por um navio. */
     private boolean isOccupied;
+
+    /** Indica se a posição já foi atingida por um tiro. */
     private boolean isHit;
 
     /**
+     * Cria uma posição na linha e coluna indicadas, inicialmente livre e
+     * não atingida.
      *
+     * @param row    linha da posição
+     * @param column coluna da posição
      */
     public Position(int row, int column) {
         this.row = row;
@@ -21,36 +40,45 @@ public class Position implements IPosition {
         this.isHit = false;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
      *
-     * @see battleship.IPosition#getRow()
+     * @return a linha da posição
      */
     @Override
     public int getRow() {
         return row;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
      *
-     * @see battleship.IPosition#getColumn()
+     * @return a coluna da posição
      */
     @Override
     public int getColumn() {
         return column;
     }
 
-
+    /**
+     * Calcula o código de dispersão (hash) da posição.
+     *
+     * @return o código de dispersão da posição
+     */
     @Override
     public int hashCode() {
         return Objects.hash(column, isHit, isOccupied, row);
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Compara esta posição com outro objeto.
+     * <p>
+     * Duas posições são iguais se tiverem a mesma linha e a mesma coluna; o
+     * facto de estarem ocupadas ou atingidas não é tido em conta.
      *
-     * @see battleship.IPosition#equals(java.lang.Object)
+     * @param otherPosition objeto a comparar com esta posição
+     * @return {@code true} se {@code otherPosition} for uma {@link IPosition}
+     *         com a mesma linha e coluna, {@code false} caso contrário
      */
     @Override
     public boolean equals(Object otherPosition) {
@@ -64,59 +92,70 @@ public class Position implements IPosition {
         }
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Considera adjacentes as posições que diferem no máximo uma linha e uma
+     * coluna, incluindo as diagonais e a própria posição.
      *
-     * @see battleship.IPosition#isAdjacentTo(battleship.IPosition)
+     * @param other posição a comparar
+     * @return {@code true} se {@code other} for adjacente a esta posição,
+     *         {@code false} caso contrário
      */
     @Override
     public boolean isAdjacentTo(IPosition other) {
         return (Math.abs(this.getRow() - other.getRow()) <= 1 && Math.abs(this.getColumn() - other.getColumn()) <= 1);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#occupy()
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Marca a posição como ocupada por um navio.
      */
     @Override
     public void occupy() {
         isOccupied = true;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#shoot()
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Marca a posição como atingida por um tiro.
      */
     @Override
     public void shoot() {
         isHit = true;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
      *
-     * @see battleship.IPosition#isOccupied()
+     * @return {@code true} se a posição estiver ocupada por um navio,
+     *         {@code false} caso contrário
      */
     @Override
     public boolean isOccupied() {
         return isOccupied;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
      *
-     * @see battleship.IPosition#isHit()
+     * @return {@code true} se a posição já tiver sido atingida,
+     *         {@code false} caso contrário
      */
     @Override
     public boolean isHit() {
         return isHit;
     }
 
+    /**
+     * Devolve uma representação textual da posição.
+     *
+     * @return texto no formato {@code "Linha = <linha> Coluna = <coluna>"}
+     */
     @Override
     public String toString() {
         return ("Linha = " + row + " Coluna = " + column);
     }
-
 }
