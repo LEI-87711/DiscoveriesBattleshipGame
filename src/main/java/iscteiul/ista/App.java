@@ -1,7 +1,7 @@
 package iscteiul.ista;
 
-import iscteiul.ista.battleship.Fleet;
-import iscteiul.ista.battleship.Tasks;
+//import iscteiul.ista.battleship.Fleet;
+//import iscteiul.ista.battleship.Tasks;
 
 /**
  * @author britoeabreu
@@ -18,7 +18,7 @@ public class App
         // Tasks.taskA();
         //Tasks.taskB();
         //	Tasks.taskC();
-        Tasks.taskD();
+        //Tasks.taskD();
         /**
          nova
          galeao 0 1 n
