@@ -116,7 +116,7 @@ public class Game implements IGame {
     /**
      * {@inheritDoc}
      *
-     * @return número de tiros que acertaram num navio
+     * @return número de tiros que acertam num navio
      */
     @Override
     public int getHits() {
