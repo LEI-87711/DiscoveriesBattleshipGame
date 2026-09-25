@@ -16,8 +16,22 @@ public class App
         System.out.printf("\n***  Battleship Game ***\n");
 
         // Tasks.taskA();
-        Tasks.taskB();
+        //Tasks.taskB();
         //	Tasks.taskC();
-        //	Tasks.taskD();
+        Tasks.taskD();
+        /**
+         nova
+         galeao 0 1 n
+         fragata 0 5 n
+         nau 4 0 s
+         nau 4 5 s
+         caravela 7 0 e
+         caravela 7 3 e
+         caravela 7 6 e
+         barca 9 0 n
+         barca 9 3 n
+         barca 9 6 n
+         barca 9 9 n
+         **/
     }
 }

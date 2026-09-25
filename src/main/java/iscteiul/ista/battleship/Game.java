@@ -171,4 +171,14 @@ public class Game implements IGame {
         printBoard(shipPositions, '#');
     }
 
+    @Override
+    public void printMyBoard(IFleet fleet) {
+        BoardPrinter.printPlayerBoard(fleet);
+    }
+
+    @Override
+    public void printOpponentBoard() {
+        BoardPrinter.print(getShots(), 'X', "TABULEIRO DO ADVERSÁRIO (conhecido)");
+    }
+
 }
