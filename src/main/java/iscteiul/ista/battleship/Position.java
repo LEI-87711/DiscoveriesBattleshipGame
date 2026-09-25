@@ -6,7 +6,8 @@ import java.util.Objects;
  * Representa uma posição (célula) do tabuleiro da Batalha Naval.
  * <p>
  * Uma posição é identificada pela linha e pela coluna, e guarda ainda se
- * está ocupada por um navio e se já foi atingida por um tiro. Duas posições
+ * está ocupada por um navio e se já foi atingida por um tiro.
+ * Duas posições
  * são consideradas iguais se tiverem a mesma linha e a mesma coluna,
  * independentemente do seu estado.
  *
