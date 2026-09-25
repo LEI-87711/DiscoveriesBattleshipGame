@@ -44,6 +44,8 @@ public class Game implements IGame {
         shots = new ArrayList<>();
         countInvalidShots = 0;
         countRepeatedShots = 0;
+        countHits = 0;
+        countSinks = 0;
         this.fleet = fleet;
     }
 
@@ -152,8 +154,8 @@ public class Game implements IGame {
      *         {@code false} caso contrário
      */
     private boolean validShot(IPosition pos) {
-        return (pos.getRow() >= 0 && pos.getRow() <= Fleet.BOARD_SIZE && pos.getColumn() >= 0
-                && pos.getColumn() <= Fleet.BOARD_SIZE);
+        return pos.getRow() >= 0 && pos.getRow() < Fleet.BOARD_SIZE
+                && pos.getColumn() >= 0 && pos.getColumn() < Fleet.BOARD_SIZE;
     }
 
     /**
@@ -202,6 +204,7 @@ public class Game implements IGame {
      *
      * @see #printBoard(List, Character)
      */
+    @Override
     public void printValidShots() {
         printBoard(getShots(), 'X');
     }
@@ -212,6 +215,7 @@ public class Game implements IGame {
      *
      * @see #printBoard(List, Character)
      */
+    @Override
     public void printFleet() {
         List<IPosition> shipPositions = new ArrayList<IPosition>();
 
@@ -219,5 +223,23 @@ public class Game implements IGame {
             shipPositions.addAll(s.getPositions());
 
         printBoard(shipPositions, '#');
+    }
+
+    /**
+     * Imprime o tabuleiro do jogador, mostrando a disposição da frota.
+     *
+     * @param fleet frota a imprimir no tabuleiro
+     */
+    @Override
+    public void printMyBoard(IFleet fleet) {
+        BoardPrinter.printPlayerBoard(fleet);
+    }
+
+    /**
+     * Imprime o tabuleiro do adversário, mostrando os tiros válidos já efetuados.
+     */
+    @Override
+    public void printOpponentBoard() {
+        BoardPrinter.print(getShots(), 'X', "TABULEIRO DO ADVERSÁRIO (conhecido)");
     }
 }
